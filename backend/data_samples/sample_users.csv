@@ -1,0 +1,6 @@
+user_id,name,email,age,signup_date,plan
+1,Alice,alice@example.com,28,2022-01-15,premium
+2,Bob,bob@example.com,35,2021-11-20,basic
+3,Charlie,charlie@example.com,22,2023-03-10,free
+4,Diana,diana@example.com,41,2020-07-25,premium
+5,Eve,eve@example.com,30,2022-08-01,basic
