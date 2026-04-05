@@ -85,18 +85,41 @@ textarea {
   line-height: 1.5;
 }
 
-.header-badge {
+.header-home-button {
   display: inline-flex;
   align-items: center;
-  padding: 0.75rem 1rem;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.header-home-button:hover {
+  background: transparent;
+  box-shadow: none;
+}
+
+.header-home-button.active {
+  background: transparent;
+  color: inherit;
+}
+
+.header-overview-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
   border-radius: 999px;
-  border: 1px solid rgba(56, 189, 248, 0.24);
-  background: rgba(56, 189, 248, 0.1);
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.18), rgba(34, 211, 238, 0.18));
+  border: 1px solid rgba(125, 211, 252, 0.24);
   color: #a5f3fc;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
+  animation: homeFloat 1.8s ease-in-out infinite;
+}
+
+.header-overview-icon svg {
+  font-size: 1.05rem;
 }
 
 .layout {
@@ -196,6 +219,16 @@ textarea {
 
 .nav-icon svg {
   font-size: 1.15rem;
+}
+
+@keyframes homeFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-2px) scale(1.05);
+  }
 }
 
 .content-area {

@@ -5,9 +5,9 @@ import FabricateFromSchema from './components/FabricateFromSchema';
 import Intro from './components/Intro';
 import './App.css';
 
-const OverviewIcon = (props) => (
+const HomeIcon = (props) => (
   <SvgIcon {...props}>
-    <path d="M3 3h8v8H3V3zm10 0h8v5h-8V3zM3 13h8v8H3v-8zm10-3h8v11h-8V10zm2 2v7h4v-7h-4zM5 5v4h4V5H5zm0 10v4h4v-4H5zM15 5v1h4V5h-4z" />
+    <path d="M12 3.2 3 10h2v10h5v-6h4v6h5V10h2l-9-6.8z" />
   </SvgIcon>
 );
 
@@ -40,6 +40,16 @@ function App() {
           </div>
         </div>
 
+        <button
+          type="button"
+          className={activeSection === 'home' ? 'header-home-button active' : 'header-home-button'}
+          onClick={() => setActiveSection('home')}
+          aria-label="Overview"
+        >
+          <span className="header-overview-icon" aria-hidden="true">
+            <HomeIcon fontSize="small" />
+          </span>
+        </button>
       </header>
 
       <section className="layout">
@@ -51,16 +61,6 @@ function App() {
             </div>
 
             <nav className="sidebar-nav">
-              <button
-                className={activeSection === 'home' ? 'nav-button active' : 'nav-button'}
-                onClick={() => setActiveSection('home')}
-              >
-                <span className="nav-icon" aria-hidden="true">
-                  <OverviewIcon fontSize="small" />
-                </span>
-                <span>Overview</span>
-              </button>
-
               <button
                 className={activeSection === 'sample' ? 'nav-button active' : 'nav-button'}
                 onClick={() => setActiveSection('sample')}
