@@ -145,6 +145,7 @@ def fabricate_from_schema(schema: SchemaDefinition):
 
 # --- Static Files Mount (for Production) ---
 # This line tells FastAPI that for any path that is not an API endpoint,
-# it should look for a matching file in the 'static' directory.
+# it should look for a matching file in the built React dist folder.
 # This will be used AFTER you build your React app for production.
-app.mount("/", StaticFiles(directory="frontend/dist", html=True), name="static")
+static_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'frontend', 'dist'))
+app.mount("/", StaticFiles(directory=static_dir, html=True), name="static")
